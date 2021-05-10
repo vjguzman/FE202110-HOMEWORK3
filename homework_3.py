@@ -122,17 +122,17 @@ KCC = K[ix_(constrained_DOFs,constrained_DOFs)]
 
 # ----------------
 # con Fuerza 1 kN
-#for i in range(Nnodes):
-#	f[2*i] = 1e3              
+for i in range(Nnodes):
+	f[2*i] = 1e3              
 # ----------------
 
-
+'''
 # ----------------
 # con Peso Propio
 for i in range(Nnodes):
 	f[2*i - 1] = -g*densidad
 # ----------------
-
+'''
 
 ff = f[free_DOFs]
 fc = f[constrained_DOFs]
