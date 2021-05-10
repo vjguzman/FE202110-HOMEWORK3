@@ -124,7 +124,8 @@ def quad4(xy, properties):
 		Ae = sqrt((sp-l0)*(sp-l1)*(sp-l2)*(sp-l3)*sp)
 
 		ke += t * wi * wj * B.T @ Eσ @ B * detJ
-		#fe += t * wi * wj * Ae * (t/3)  * detJ
+		fe += t * wi * wj * Ae * (t/3) * by * detJ
+		#Debia decir array([bx,by,bx,by,bx,by,bx,by]) pero me salia error uwu (non-broadcastable output operand with shape (8,1) doesn't match the broadcast shape (8,8))
 
 	return ke, fe
 
