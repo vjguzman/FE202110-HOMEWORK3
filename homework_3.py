@@ -71,12 +71,12 @@ g = 9.81
 densidad = 1.24e3
 
 properties = {}
-properties["E"] = 35000
+properties["E"] = 35e9
 properties["nu"] = 0.4
 properties["bx"] = 0
 #properties["by"] = -g*densidad
 properties["by"] = 0
-properties["t"] = 3e-3
+properties["t"] = 4e-3
 
 #---------------------------------------#
 		# #DIRECT STIFFNESS METHOD #
@@ -119,8 +119,19 @@ KFC = K[ix_(free_DOFs,constrained_DOFs)]
 KCF = K[ix_(constrained_DOFs,free_DOFs)]
 KCC = K[ix_(constrained_DOFs,constrained_DOFs)]
 
+
+# ----------------
+# con Fuerza 1 kN
+#for i in range(Nnodes):
+#	f[2*i] = 1e3              
+# ----------------
+
+
+# ----------------
+# con Peso Propio
 for i in range(Nnodes):
-	f[i] = 1e3                 #1 KN
+	f[2*i - 1] = -g*densidad
+# ----------------
 
 
 ff = f[free_DOFs]
@@ -129,17 +140,6 @@ fc = f[constrained_DOFs]
 ff = f[free_DOFs]
 fc = f[constrained_DOFs]
 
-
-'''
-fe_ff = zeros((len(free_DOFs),1))
-for i in range(len(ff)):
-	if i%2 == 0:
-		fe_ff[i] = (properties['by']*f[i][0])
-	else:
-		fe_ff[i] = (properties['bx']*f[i][0])
-
-print(len(fe_ff))
-'''
 
 u = zeros((NDOFs,1))
 R = zeros((len(constrained_DOFs),1))
@@ -194,7 +194,7 @@ for e in Quads:
 	nk = conec[e,2]
 	nl = conec[e,3]
 
-	xy_e = xy[[ni, nj, nk,nl],:]
+	xy_e = xy[[ni, nj, nk,nl, ni],:]
 	uv_e = uv[[ni,nj,nk,nl], :]
 
 	u_e = uv_e.reshape((-1))
@@ -207,7 +207,5 @@ for e in Quads:
 
 elementos = array(Quads)+1
 write_elements_data(f"sigma_x_placa", elementos, sigma_x, "sigma_x")
-write_elements_data(f"sigma_y_placa", elementos, sigma_y, "sigma_y")
-write_elements_data(f"sigma_xy_placa", elementos, sigma_xy, "sigma_yx")
 
 print("FIN")

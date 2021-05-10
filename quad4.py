@@ -124,7 +124,7 @@ def quad4(xy, properties):
 		Ae = sqrt((sp-l0)*(sp-l1)*(sp-l2)*(sp-l3)*sp)
 
 		ke += t * wi * wj * B.T @ Eσ @ B * detJ
-		fe += t * wi * wj * Ae * (t/3)  * by * detJ
+		#fe += t * wi * wj * Ae * (t/3)  * detJ
 
 	return ke, fe
 
