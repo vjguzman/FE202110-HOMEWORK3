@@ -43,16 +43,14 @@ To complete the analysis, the quad4.py programming was carried out in classes wh
 #### Visualize displacements and stress in the center of each element (one per element as in the CST element). 
 To be able to visualize the displacements and stresses in the elements, we use the code present in the gmsh_post to write the displacement data obtain when we applied the direct stiffness method and for the compute of the stresses we used the function quad4_post that can be found in the quad4.py 
 <br>
-We calculate the results for displacement ans stress for each element using the force applied in the structure by the self weight in the y direction (-density per gravity) says results can be found in the carpet "Resultados con Peso Propio".
+We calculate the results for displacement ans stress for each element using the force applied in the structure by the self weight in the y-direction (-density per gravity) says results can be found in the carpet "Resultados con Peso Propio".
+<br>
+I wanted to apply the formula of fe but i noticed that in classes we did not added so i left it commented in the quad4.py, also i tried to make the mesh more refined but i had the same problems we had in class so i left it more simple.  
 
 #### Use the readme to display the deformed shape and stress components for a force F = 1 KN.  
-Using the same method we can display the deformed shape and stresses for the structure with a force of 1 kN.
+Using the same method we can display the deformed shape and stresses for the structure with a force of 1 kN in the x-direction.
 <br>
 ##### DISPLACEMENTS
 ![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/con%20F%20%3D%201%20kN/Desplazamientos.png)
 ##### STRESS IN X
 ![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/con%20F%20%3D%201%20kN/Sigma_X.png)
-##### STRESS IN XY
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/con%20F%20%3D%201%20kN/Sigma_XY.png)
-##### STRESS IN Y
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/con%20F%20%3D%201%20kN/Sigma_Y.png)
