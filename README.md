@@ -45,7 +45,7 @@ To be able to visualize the displacements and stresses in the elements, we use t
 <br>
 We calculate the results for displacement ans stress for each element using the force applied in the structure by the self weight in the y-direction (-density per gravity) says results can be found in the carpet "Resultados con Peso Propio".
 <br>
-I wanted to apply the formula of fe but i noticed that in classes we did not added so i left it commented in the quad4.py, also i tried to make the mesh more refined but i had the same problems we had in class so i left it more simple.  
+I wanted to apply the formula of fe but i noticed that in classes we did not added so i left it commented in the quad4.py, also i tried to make the mesh more refined but i had the same problems we had in class so i left it more simple. Finally, i notice that the elements in the extreme part of the structure must have another thickness. 
 
 #### Use the readme to display the deformed shape and stress components for a force F = 1 KN.  
 Using the same method we can display the deformed shape and stresses for the structure with a force of 1 kN in the x-direction.
