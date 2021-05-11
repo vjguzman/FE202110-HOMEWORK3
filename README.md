@@ -1,15 +1,15 @@
 # FE202110-HOMEWORK3 :smile:
 General Objective is to study quadrilateral elements (Quad4 and Quad9), nodal stress-averaging and orthotropic material models. 
 
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Imagenes/Placa_Enunciado.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Geometria/Placa_Enunciado.png)
 
 ## :computer: Geometry of the base-plate
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Imagenes/Geometria_Placa_2D.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Geometria/Geometria_Placa_2D.png)
 
 - Include physical groups for the fixed displacement condition, prescribed traction condition and the two element thicknesses.
 
 ## :computer: Mesh  of the base-plate
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Imagenes/Mesh_Placa_2D.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Geometria/Mesh_Placa_2D.png)
 
 - Mesh must consist of first-order quadrilateral elements only .
 - Mesh size should be about 0.5mm in the vicinity of the hole and about 2mm elsewhere. 
@@ -43,14 +43,12 @@ To complete the analysis, the quad4.py programming was carried out in classes wh
 #### Visualize displacements and stress in the center of each element (one per element as in the CST element). 
 To be able to visualize the displacements and stresses in the elements, we use the code present in the gmsh_post to write the displacement data obtain when we applied the direct stiffness method and for the compute of the stresses we used the function quad4_post that can be found in the quad4.py 
 <br>
-We calculate the results for displacement ans stress for each element using the force applied in the structure by the self weight in the y-direction (-density per gravity) says results can be found in the carpet "Resultados con Peso Propio".
-<br>
-I wanted to apply the formula of fe but i noticed that in classes we did not added so i left it commented in the quad4.py, also i tried to make the mesh more refined but i had the same problems we had in class so i left it more simple. Finally, i notice that the elements in the extreme part of the structure must have another thickness. 
+
 
 #### Use the readme to display the deformed shape and stress components for a force F = 1 KN.  
 Using the same method we can display the deformed shape and stresses for the structure with a force of 1 kN in the x-direction.
 <br>
 ##### DISPLACEMENTS
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/con%20F%20%3D%201%20kN/Desplazamientos.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20I/Desplazamientos_Malla1.png)
 ##### STRESS IN X
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/con%20F%20%3D%201%20kN/Sigma_X.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20I/Sigma_X_Malla1.png)
