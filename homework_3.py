@@ -12,7 +12,8 @@ Natural_Boundary = 2
 Placa = 3
 Extremos = 4
 
-fid = open(f'placa_2d_mesh.msh',"r")
+
+fid = open(f'placa_2d_simple.msh',"r")
 
 #--------------------------------------#
 		# NODES - XY #
@@ -29,7 +30,8 @@ for i in range(Nnodes):
 	xy[i,0] = float(sl[1])
 	xy[i,1] = float(sl[2])
 
-fid = open(f'placa_2d_mesh.msh',"r")
+fid = open(f'placa_2d_simple.msh',"r")
+
 #---------------------------------------#
 			# ELEMENTS - CONECT #
 while True:
@@ -41,8 +43,13 @@ Nelements = int(fid.readline())
 conec = zeros((Nelements,4), dtype= int32)
 
 fixed_nodes = []
+extremos = []
+nextremos = 0
+placa = []
+nplaca = 0
 NQ = 0
 Quads = []
+
 for i in range(Nelements):
 	line = fid.readline()
 	sl = line.split()
@@ -65,18 +72,36 @@ for i in range(Nelements):
 		conec[element_number,:] =[n0, n1,n2,n3]		
 		Quads.append(element_number)
 
+	if physical_group == Placa:
+		nplaca+=1
+		placa.append(element_number)
+
+	if physical_group == Extremos:
+		nextremos+=1
+		extremos.append(element_number)
+
 print(fixed_nodes)
+
 #---------------------------------------#
+
 g = 9.81
 densidad = 1.24e3
 
-properties = {}
-properties["E"] = 35e9
-properties["nu"] = 0.4
-properties["bx"] = 0
-#properties["by"] = -g*densidad
-properties["by"] = 0
-properties["t"] = 4e-3
+properties0 = {}
+properties0["E"] = 35e9
+properties0["nu"] = 0.4
+properties0["bx"] = 0
+properties0["by"] = 0
+properties0["t"] = 4e-3
+
+properties1 = {}
+properties1["E"] = 35e9
+properties1["nu"] = 0.4
+properties1["bx"] = 0
+properties1["by"] = 0
+properties1["t"] = 5e-3
+
+properties = [properties0, properties1]
 
 #---------------------------------------#
 		# #DIRECT STIFFNESS METHOD #
@@ -94,7 +119,11 @@ for e in Quads:
 
 	xy_e = xy[[ni, nj, nk, nl],:]
 
-	ke, fe = quad4(xy_e, properties)
+	if e in placa:
+		ke, fe = quad4(xy_e, properties0)
+
+	if e in extremos:
+		ke,fe = quad4(xy_e, properties1)
 
 
 	d = [2*ni, 2*ni+1 , 2*nj, 2*nj+1, 2*nk, 2*nk+1, 2*nl, 2*nl+1]
@@ -122,17 +151,18 @@ KCC = K[ix_(constrained_DOFs,constrained_DOFs)]
 
 # ----------------
 # con Fuerza 1 kN
+
 for i in range(Nnodes):
-	f[2*i] = 1e3              
+	f[2*i] = 1e3             
+
 # ----------------
 
-'''
 # ----------------
 # con Peso Propio
-for i in range(Nnodes):
-	f[2*i - 1] = -g*densidad
+#for i in range(Nnodes):
+	#f[2*i - 1] = -g*densidad
 # ----------------
-'''
+
 
 ff = f[free_DOFs]
 fc = f[constrained_DOFs]
@@ -199,10 +229,16 @@ for e in Quads:
 
 	u_e = uv_e.reshape((-1))
 
-	epsilon, sigma = quad4_post(xy_e, u_e, properties)
+	if e in placa:
+		epsilon, sigma = quad4_post(xy_e, u_e, properties0)
+
+	if e in extremos:
+		epsilon, sigma = quad4_post(xy_e, u_e, properties1)
+
 	sigma_x[i] = epsilon[0]
 	sigma_y[i] = epsilon[1]
 	sigma_xy[i] = epsilon[2]
+	
 	i+=1
 
 elementos = array(Quads)+1
