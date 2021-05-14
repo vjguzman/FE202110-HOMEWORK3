@@ -14,7 +14,7 @@ General Objective is to study quadrilateral elements (Quad4 and Quad9), nodal st
 - Mesh must consist of first-order quadrilateral elements only .
 - Mesh size should be about 0.5mm in the vicinity of the hole and about 2mm elsewhere. 
 
-## :books: Analysis
+## :books: Analysis - Part I
 
 #### Perform FEM analysis on your mesh.
 In this part of the Homework we use a mesh of quadrilateral elements with a vicinity about 0.5 mm in the hole and 2mm elsewhere, because we want it to be more specific with better results in the hole that our structure has. We notice that as we use a 2D geometrical blase-plate, we were able to use the same method as in CST element that we used in Homework 2 but for Quad4 based on the Chapter 17 of Felippa's book.   <br>
@@ -52,3 +52,8 @@ Using the same method we can display the deformed shape and stresses for the str
 ![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20I/Desplazamientos_Malla1.png)
 ##### STRESS IN X
 ![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20I/Sigma_X_Malla1.png)
+
+
+## :books: Analysis - Part II
+
+#### implementation of nodal stress averaging and discuss of the results
