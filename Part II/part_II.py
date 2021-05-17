@@ -183,7 +183,9 @@ def quad4_partII(file_name, properties):
 	sigma_xy = zeros(NQ+1)
 	tau_xy = zeros(NQ+1)
 
-	average_stress = zeros(NQ+1)
+	average_stress_x = zeros(NQ+1)
+	average_stress_y = zeros(NQ+1)
+	average_stress_xy = zeros(NQ+1)
 
 	i = 0
 	for e in Quads:
@@ -214,14 +216,18 @@ def quad4_partII(file_name, properties):
 		sigma_xy[i] = sigma[2]
 		tau_xy[i] = epsilon[2]
 
-		average_stress[i] = stress[0]
+		average_stress_x[i] = stress[0]
+		average_stress_y[i] = stress[1]
+		average_stress_xy[i] = stress[2]
 
 		i+=1
 
 	elementos = array(Quads)+1
-	write_elements_data(f"sigma_x_average_{file_name}", elementos, average_stress, "sigma_x")
+	write_elements_data(f"sigma_x_average_{file_name}", elementos, average_stress_x, "sigma_x")
+	write_elements_data(f"sigma_y_average_{file_name}", elementos, average_stress_y, "sigma_y")
+	write_elements_data(f"sigma_xy_average_{file_name}", elementos, average_stress_xy, "sigma_xy")
 
-	final = print(f"Listo! revisar archivo de {file_name}")
+	final = print(f"Listo! revisar archivos de {file_name}")
 	return final
 
 
