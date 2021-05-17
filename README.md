@@ -109,8 +109,8 @@ Note that the same applied load of 1 kN of part I was used.
 <br>
 <br>
 
-##### 🔅 STRESS IN Y - SIMPLE MESH
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_Y_Simple.png)
+##### 🔅 STRESS IN X WITH NODAL STRESS- SIMPLE MESH
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_X_Average_Simple.png)
 
 <br>
 <br>
@@ -121,8 +121,8 @@ Note that the same applied load of 1 kN of part I was used.
 <br>
 <br>
 
-##### 🔅 STRESS IN Y - MEDIUM MESH
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_Y_Media.png)
+##### 🔅 STRESS IN X WITH NODAL STRESS - MEDIUM MESH
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_X_Average_Media.png)
 
 <br>
 <br>
@@ -133,8 +133,8 @@ Note that the same applied load of 1 kN of part I was used.
 <br>
 <br>
 
-##### 🔅 STRESS IN Y - FINE MESH
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_Y_Fina.png)
+##### 🔅 STRESS IN X WITH NODAL STRESS - FINE MESH
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_X_Average_Fina.png)
 
 <br>
 <br>
