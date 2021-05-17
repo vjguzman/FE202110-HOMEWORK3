@@ -97,26 +97,44 @@ Here we define the Gaussian rule with respect to what is present in the figure b
 ◽    **Gaussian rule**  
   ![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Geometria/Gauss.png)
 <br>
-
+<br>
+<br>
 
 #### ▪ Discuss of the results
 Note that the same applied load of 1 kN of part I was used.
 
 ##### 🔅 STRESS IN X - SIMPLE MESH
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Sigma_Simple.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_X_Simple.png)
+
+<br>
+<br>
+
+##### 🔅 STRESS IN Y - SIMPLE MESH
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_Y_Simple.png)
 
 <br>
 <br>
 
 ##### 🔅 STRESS IN X - MEDIUM MESH
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Sigma_Media.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_X_Media.png)
+
+<br>
+<br>
+
+##### 🔅 STRESS IN Y - MEDIUM MESH
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_Y_Media.png)
 
 <br>
 <br>
 
 ##### 🔅 STRESS IN X - FINE MESH
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Sigma_Fina.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_X_Fina.png)
 
 <br>
 <br>
 
+##### 🔅 STRESS IN Y - FINE MESH
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_Y_Fina.png)
+
+<br>
+<br>
