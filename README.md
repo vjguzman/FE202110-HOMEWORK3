@@ -101,8 +101,16 @@ Here we define the Gaussian rule with respect to what is present in the figure b
 <br>
 
 #### ▪ Discuss of the results
-Note that the same applied load of 1 kN of part I was used.
-
+In order to better distribute the load we used in the part I (1000kN) in the natural nodes, what was learned was used in classes where they told us how to create the quad4_line_load function (which can be seen in detail in the quad4.py file).
+Basically what was done was to take the applied load between two nodes of the natural edge and distribute it with respect to the following equation
+<br>
+<br>
+<img src="https://latex.codecogs.com/gif.latex?\delta&space;W{int}^{e}&space;=&space;\delta&space;u^{e}&space;*&space;fe" title="\delta W{int}^{e} = \delta u^{e} * fe" />
+<br>
+<img src="https://latex.codecogs.com/gif.latex?fe&space;=&space;\frac{eL}{2}\cdot\begin{bmatrix}&space;tx\\&space;ty&space;\\&space;tx&space;\\&space;ty&space;\end{bmatrix}" title="fe = \frac{eL}{2}\cdot\begin{bmatrix} tx\\ ty \\ tx \\ ty \end{bmatrix}" />
+<br>
+Where e is the thickness at the natural edge, tx and tx correspond to the respective loads distributed over the length of the element. In this case ty is 0 and tx is the 1000 kN load divided by 4 times the thickness.
+<br>
 ##### 🔅 STRESS IN X - SIMPLE MESH
 ![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20II/Imagenes/Sigma_X_Simple.png)
 
@@ -138,3 +146,6 @@ Note that the same applied load of 1 kN of part I was used.
 
 <br>
 <br>
+
+
+
