@@ -6,7 +6,7 @@ General Objective is to study quadrilateral elements (Quad4 and Quad9), nodal st
 ### Assigments
 - [x] Part I. Study geometry of the 2-D base plate performing FEM analysis.
 - [x] Part II. Study the convergence rate of nodal-averaged stresses for this problem. 
-- [ ] Part III. Implement and study the convergence rate of higher order elements and stress fields.
+- [x] Part III. Implement and study the convergence rate of higher order elements and stress fields.
 
 
 ## :computer: Geometry of the base-plate
@@ -147,5 +147,23 @@ Where e is the thickness at the natural edge, tx and tx correspond to the respec
 <br>
 <br>
 
+## :books: Analysis - Part IIII
 
+### Quad9
+
+This method works in the same way as quad 4 but here 9 nodes are considered within the element, that is, the gmsh mesh will contain more precise information since the elements have more nodes. It behaves as an iso parametric element defined by the equations below.
+<br>
+<br>
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Geometria/Quad9%20-%20Eq.png)
+<br>
+<br>
+Using the geometry shown above, we implement Implement the 9-node quadrilateral (Quad9) element and nodal stress averaging for that element based on what has been done for the quad4. <br>
+To demonstrate its operation 3 coarses where created, whith simple, medium and fine meshesfor the Quad4 and Quad9 discretizations with similar number of nodes for each case. So we implement a element size factor with 0.25 (9494 nodes), 0.75 (1610 nodes) and 1.25 (762 nodes). We also compared the stress fields for each discretization, using a plot the maximum absolute stress components vs the mesh size (h), said results are shown in the next section. <br>
+<br>
+
+### Gauss Rule and Shape Function
+The Gauss rule for quad9 is different from the one we used in quad4, because we now have more nodes in the element and more shape functions. We also had to change the shape functions (matrix N with Ni, i=(0,8)), this was reviewed in a certain part in class and working with the shape_function.py code where we use sympy to be able to compute the dNi_dxi, dNi_dyi, dx_dxi, dx_dxdeta, dy_dxi and dy_dxdeta without errors. <br>
+In the figure above we have the quad4 and quad9 gauss rule, but as we saw previously the interpolation functions are in a different order so we had to arrange the gauss rule to fit our order.
+<br>
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Geometria/Gauss%20Quad9.png)
 
