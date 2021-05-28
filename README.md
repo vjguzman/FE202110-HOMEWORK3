@@ -194,3 +194,23 @@ Is easy to think that the more nodes the mesh has, the higher the maximum absolu
 <br>
 
 #### ▪ Orthotropic Material Model
+To make the orthotropic code, for quad9 (orthotropic_quad9.py) and quad4 (orthotropic_quad4.py) , we change the properties of the element by adding the equations presented below 
+<br>
+<br>
+<img src="https://latex.codecogs.com/gif.latex?E_{\sigma&space;}&space;=&space;\frac{1}{v12\cdot&space;v21}\begin{bmatrix}&space;E1&space;&&space;v21\cdot&space;E1&space;&&space;0\\&space;v12\cdot&space;E2&space;&&space;E2&space;&&space;0\\&space;0&space;&&space;0&space;&&space;G12\cdot&space;(1-v12\cdot&space;v21)&space;\end{bmatrix}" title="E_{\sigma } = \frac{1}{v12\cdot v21}\begin{bmatrix} E1 & v21\cdot E1 & 0\\ v12\cdot E2 & E2 & 0\\ 0 & 0 & G12\cdot (1-v12\cdot v21) \end{bmatrix}" />
+<br>
+<br>
+Donde <img src="https://latex.codecogs.com/gif.latex?E1&space;=&space;\alpha&space;\cdot&space;E2" title="E1 = \alpha \cdot E2" />
+<br>
+<img src="https://latex.codecogs.com/gif.latex?v21&space;=&space;\alpha&space;\cdot&space;v12" title="v21 = \alpha \cdot v12" />
+<br>
+<br>
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Orthotropic_Quad4.png)
+<br>
+<br>
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Orthotropic_Quad9.png)
+<br>
+
+#### ▪ . How does the behavior of the stress field with alpha inform your decision on 3-D printing filling pattern?
+We implement the orthotropic material model for the mesh of 0.25 the more fine of all, in the plots shown above we can notice that in quad4 and quad9 that if the alpha is bigger the max stress component is lower, this can happen for the relation between the E's and v's.
+<br>
