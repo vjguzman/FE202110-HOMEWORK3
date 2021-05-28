@@ -183,3 +183,14 @@ As we can see below, we use the code maximum_stress.py to be able to get the max
 #### ▪ Which element shows better convergence in terms of stress? Why is that the case? What uniform mesh size seems appropriate? 
 
 Is easy to think that the more nodes the mesh has, the higher the maximum absolute stresses, so the convergence in the maximum stresses can be seen as a function of the number of nodes. This happens in Quad4 but not in Quad9 because the opposite happens, so we can say that the mesh more fine is better for quad4 but the more simple is better for quad9, it can happen because our quad9 programming is not a 100% correct and we may have some things to fix.
+<br>
+<br>
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Max_Stress_Quad4.png)
+<br>
+<br>
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Max_Stress_Quad9.png)
+<br>
+**Note** in the carpet Part III/Plots we can find the stresses for quad4 and quad9 plot in gmsh.
+<br>
+
+#### ▪ Orthotropic Material Model
