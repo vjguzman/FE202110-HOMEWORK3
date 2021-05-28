@@ -162,8 +162,8 @@ To demonstrate its operation 3 coarses where created, whith simple, medium and f
 <br>
 
 ### Gauss Rule and Shape Function
-The Gauss rule for quad9 is different from the one we used in quad4, because we now have more nodes in the element and more shape functions. We also had to change the shape functions (matrix N with Ni, i=(0,8)), this was reviewed in a certain part in class and working with the shape_function.py code where we use sympy to be able to compute the dNi_dxi, dNi_dyi, dx_dxi, dx_dxdeta, dy_dxi and dy_dxdeta without errors. <br>
-In the figure above we have the quad4 and quad9 gauss rule, but as we saw previously the interpolation functions are in a different order so we had to arrange the gauss rule to fit our order.
+The Gauss rule for quad9 is different from the one we used in quad4, because we now have more nodes in the element and more shape functions. We also had to change the shape functions (matrix N with Ni, i=(0,8)), this was reviewed in a certain part in class and working with the shape_function.py code where we use sympy to be able to compute the dNi_dxi, dNi_dyi, dx_dxi, dx_dxdeta, dy_dxi and dy_dxdeta without errors. In the figure below we have the quad4 and quad9 gauss rule, but as we saw previously the interpolation functions are in a different order so we had to arrange the gauss rule to fit our order.
+<br>
 <br>
 ![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Geometria/Gauss%20Quad9.png)
 
