@@ -22,6 +22,8 @@ General Objective is to study quadrilateral elements (Quad4 and Quad9), nodal st
 
 <br>
 <br>
+<br>
+<br>
 
 ## :books: Analysis - Part I
 
@@ -61,6 +63,8 @@ Using the same method we can display the deformed shape and stresses for the str
 ##### 🔅 STRESS IN X
 ![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20I/Sigma_X_Malla1.png)
 
+<br>
+<br>
 <br>
 <br>
 
@@ -146,6 +150,8 @@ Where e is the thickness at the natural edge, tx and tx correspond to the respec
 
 <br>
 <br>
+<br>
+<br>
 
 ## :books: Analysis - Part IIII
 
@@ -158,12 +164,22 @@ This method works in the same way as quad 4 but here 9 nodes are considered with
 <br>
 <br>
 Using the geometry shown above, we implement Implement the 9-node quadrilateral (Quad9) element and nodal stress averaging for that element based on what has been done for the quad4. <br>
-To demonstrate its operation 3 coarses where created, whith simple, medium and fine meshesfor the Quad4 and Quad9 discretizations with similar number of nodes for each case. So we implement a element size factor with 0.25 (9494 nodes), 0.75 (1610 nodes) and 1.25 (762 nodes). We also compared the stress fields for each discretization, using a plot the maximum absolute stress components vs the mesh size (h), said results are shown in the next section. <br>
+To demonstrate its operation 3 mesh where created, whith simple, medium and fine meshesfor the Quad4 and Quad9 discretizations with similar number of nodes for each case. So we implement a element size factor with **0.25 (9494 nodes), 0.75 (1610 nodes) and 1.25 (762 nodes)**. We also compared the stress fields for each discretization, using a plot the maximum absolute stress components vs the mesh size (h), said results are shown in the next section. <br>
 <br>
 
 ### Gauss Rule and Shape Function
-The Gauss rule for quad9 is different from the one we used in quad4, because we now have more nodes in the element and more shape functions. We also had to change the shape functions (matrix N with Ni, i=(0,8)), this was reviewed in a certain part in class and working with the shape_function.py code where we use sympy to be able to compute the dNi_dxi, dNi_dyi, dx_dxi, dx_dxdeta, dy_dxi and dy_dxdeta without errors. In the figure below we have the quad4 and quad9 gauss rule, but as we saw previously the interpolation functions are in a different order so we had to arrange the gauss rule to fit our order.
+The Gauss rule for quad9 is different from the one we used in quad4, because we now have more nodes in the element and more shape functions. We also had to change the shape functions **(matrix N with Ni, i=(0,8))**, this was reviewed in a certain part in class and working with the shape_function.py code where we use sympy to be able to compute the *dNi_dxi, dNi_dyi, dx_dxi, dx_dxdeta, dy_dxi and dy_dxdeta* without errors. In the figure below we have the quad4 and quad9 gauss rule, but as we saw previously the interpolation functions are in a different order so we had to arrange the gauss rule to fit our order.
 <br>
 <br>
 ![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Geometria/Gauss%20Quad9.png)
 
+
+### Analysis results Quad4 vs Quad9
+
+#### ▪ Compare the stress fields for each discretization
+As we can see below, we use the code maximum_stress.py to be able to get the maximum absolute stress components and plot it vs. the mesh size h. From this plots, we can say that the mesh 2 (1.25) the more simple has a bigger strees component in x both in quad4 and quad9, we can also say that in quad4 we have a linear relation because we have a straight line but in quad9 we don't have that, we can see that that between mesh 0 (0.25) fine and mesh 1 (0.75) medium we have the same relation between strees and mesh size, but when the mesh is more simple (mesh 2) we have a bigger stress.
+<br>
+
+#### ▪ Which element shows better convergence in terms of stress? Why is that the case? What uniform mesh size seems appropriate? 
+
+Is easy to think that the more nodes the mesh has, the higher the maximum absolute stresses, so the convergence in the maximum stresses can be seen as a function of the number of nodes. This happens in Quad4 but not in Quad9 because the opposite happens, so we can say that the mesh more fine is better for quad4 but the more simple is better for quad9, it can happen because our quad9 programming is not a 100% correct and we may have some things to fix.
