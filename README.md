@@ -182,16 +182,15 @@ As we can see below, we use the code maximum_stress.py to be able to get the max
 
 #### ▪ Which element shows better convergence in terms of stress? Why is that the case? What uniform mesh size seems appropriate? 
 
-Is easy to think that the more nodes the mesh has, the higher the maximum absolute stresses, so the convergence in the maximum stresses can be seen as a function of the number of nodes. This happens in Quad4 but not in Quad9 because the opposite happens, so we can say that the mesh more fine is better for quad4 but the more simple is better for quad9, it can happen because our quad9 programming is not a 100% correct and we may have some things to fix.
+Is easy to think that the more nodes the mesh has, the higher the maximum absolute stresses, so the convergence in the maximum stresses can be seen as a function of the number of nodes. This happens in Quad4 and Quad9 because the opposite happens, so we can say that the mesh more fine is better.
 <br>
 <br>
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Max_Stress_Quad4.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Max_Quad4.png)
 <br>
 <br>
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Max_Stress_Quad9.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Max_Quad9.png)
 <br>
-**Note** in the carpet Part III/Plots we can find the stresses for quad4 and quad9 plot in gmsh.
-<br>
+
 
 #### ▪ Orthotropic Material Model
 To make the orthotropic code, for quad9 (orthotropic_quad9.py) and quad4 (orthotropic_quad4.py) , we change the properties of the element by adding the equations presented below 
@@ -205,12 +204,12 @@ Donde <img src="https://latex.codecogs.com/gif.latex?E1&space;=&space;\alpha&spa
 <img src="https://latex.codecogs.com/gif.latex?v21&space;=&space;\alpha&space;\cdot&space;v12" title="v21 = \alpha \cdot v12" />
 <br>
 <br>
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Orthotropic_Quad4.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Max_Orthotropic_Quad4.png)
 <br>
 <br>
-![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Orthotropic_Quad9.png)
+![img](https://github.com/vjguzman/FE202110-HOMEWORK3/blob/main/Part%20III/Plots/Max_Orthotropic_Quad9.png)
 <br>
 
 #### ▪ . How does the behavior of the stress field with alpha inform your decision on 3-D printing filling pattern?
-We implement the orthotropic material model for the mesh of 0.25 the more fine of all, in the plots shown above we can notice that in quad4 and quad9 that if the alpha is bigger the max stress component is lower, this can happen for the relation between the E's and v's.
+We implement the orthotropic material model for the mesh of 0.25 the more fine of all, in the plots shown above we can notice that in quad4 and quad9 that alpha and stress have a linear relationship this can happen for the relation between the E's and v's.
 <br>
